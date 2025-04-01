@@ -44,8 +44,7 @@ class PromotionController extends Controller
         Promotion::create($validated);
 
         return redirect()
-            ->route('promotions.index')
-            ->with('success', 'Promosi berhasil ditambahkan!');
+            ->route('promotions.index');
     }
 
     /**
@@ -88,8 +87,7 @@ class PromotionController extends Controller
 
         $promotion->update($data);
 
-        return redirect()->route('promotions.index')
-            ->with('success', 'Promosi berhasil diperbarui!');
+        return redirect()->route('promotions.index');
     }
 
     /**
@@ -103,7 +101,6 @@ class PromotionController extends Controller
         
         $promotion->delete();
 
-        return redirect()->route('promotions.index')
-            ->with('success', 'Promosi berhasil dihapus!');
+        return redirect()->route('promotions.index');
     }
 }
