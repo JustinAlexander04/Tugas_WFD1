@@ -19,7 +19,7 @@ class PromotionFactory extends Factory
         return [
             'title' => 'Event ' . $this->faker->word(),
             'description' => $this->faker->paragraphs(3, true),
-            'image' => 'promotions/promo-' . $this->faker->numberBetween(1, 5) . '.jpg',
+            'image' => 'promo-' . $this->faker->numberBetween(1, 5) . '.jpg',
             'created_at' => now(),
             'updated_at' => now(),
         ];

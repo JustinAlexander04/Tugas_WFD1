@@ -7,8 +7,9 @@
         <h1 class="text-4xl w-fit font-semibold ">{{ $promotion->title }}</h1>
         <p class="text-gray-500 text-sm">Created at: {{ $promotion->created_at->format('d M Y') }}</p>
 
-        <img src="{{ asset('storage/' . $promotion->image) }}" alt="{{ $promotion->title }}"
-            class="w-full h-64 object-contain rounded-lg mb-4">
+        <img src="{{ Str::startsWith($promotion->image, 'promo-') ? asset('images/' . $promotion->image) : asset('storage/' . $promotion->image) }}"
+            alt="{{ $promotion->title }}" class="w-full h-64 object-contain rounded-lg mb-4">
+
         <p class="text-gray-700">Event description</p>
         <p class="text-gray-700">{{ $promotion->description }}</p>
 

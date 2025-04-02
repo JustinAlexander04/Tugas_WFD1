@@ -6,8 +6,9 @@
         @foreach ($promotions as $promotion)
             <div class="bg-white shadow-md rounded-lg p-4 flex flex-col gap-2">
                 <h2 class="text-2xl font-semibold">{{ $promotion->title }}</h2>
-                <img src="{{ asset('storage/' . $promotion->image) }}" alt="{{ $promotion->title }}"
-                    class="w-full h-64 object-contain rounded-lg mb-4">
+                <img src="{{ Str::startsWith($promotion->image, 'promo-') ? asset('images/' . $promotion->image) : asset('storage/' . $promotion->image) }}"
+                    alt="{{ $promotion->title }}" class="w-full h-64 object-contain rounded-lg mb-4">
+
                 <a href="{{ route('promotions.show', $promotion) }}" class="text-blue-500 group hover:underline">View Details
                     <i class="fa-solid fa-chevron-right h-4 w-3 group-hover:translate-x-0.5 text-sm transition"></i></a>
             </div>
